@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apple – Innovation & Design</title>
+  <style>
+    /* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: #000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav .logo {
+  width: 40px;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #aaa;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(to right, #000, #333);
+  color: #fff;
+  animation: fadeIn 2s ease;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* Section */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Products */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card {
+  background: #f9f9f9;
+  border-radius: 15px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* History Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.event {
+  background: #f1f1f1;
+  border-left: 5px solid #000;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: left;
+  animation: slideIn 1s ease;
+}
+
+/* Awards & Achievements */
+.awards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.award {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.award:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Our Leaders */ 
+.team {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.member {
+  width: 220px;
+  text-align: center;
+}
+
+.member img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.member img:hover {
+  transform: scale(1.05);
+}
+
+#sustainability {
+  background: #f1f1f1;
+  padding: 60px 20px;
+  border-radius: 12px;
+}
+
+/* Testimonials */
+#testimonials {
+  background: #f9f9f9;
+  padding: 60px 20px;
+  border-radius: 12px;
+}
+.reviews {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.review {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 280px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.review:hover {
+  transform: translateY(-8px);
+}
+
+/* FAQ */
+#faq {
+  padding: 60px 20px;
+  text-align: left;
+}
+.faq-list {
+  max-width: 700px;
+  margin: auto;
+}
+.faq-item {
+  background: #f1f1f1;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+.faq-item:hover {
+  background: #e5e5e5;
+}
+
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Contact */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: auto;
+  gap: 15px;
+}
+
+form input, form textarea, form button {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+}
+
+form button {
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #333;
+}
+
+.gallery-grid img {
+  height: 200px;
+  object-fit: cover;
+}
+
+form input:focus, form textarea:focus {
+  border-color: #000;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  opacity: 0.9;
+}
+footer:hover {
+  opacity: 1;
+}
+
+.subscribe {
+  margin-top: 30px;
+}
+
+.subscribe input {
+  padding: 10px;
+  width: 250px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.subscribe button {
+  padding: 10px 20px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.subscribe button:hover {
+  background: #333;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  animation: typing 3s steps(20, end), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #fff;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Footer */
+footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes slideIn {
+  from {opacity: 0; transform: translateX(-30px);}
+  to {opacity: 1; transform: translateX(0);}
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <img src="images/apple-logo.png" alt="Apple Logo" class="logo">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#history">History</a></li>
+        <li><a href="#innovation">Innovation</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <h1>Think Different</h1>
+      <p>Apple inspires the world with innovation and design.</p>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Apple</h2>
+    <p>
+      Founded in 1976, Apple has redefined technology with groundbreaking 
+      products like the iPhone, Mac, iPad, and Apple Watch. 
+      Its mission is to create the best user experience through 
+      innovative hardware, software, and services.
+    </p>
+  </section>
+
+  <!-- Products -->
+   <section id="products">
+    <h2>Our Products</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="images/iPhone.png" alt="iPhone">
+        <h3>iPhone</h3>
+      </div>
+      <div class="card">
+        <img src="images/MacBook.jpg" alt="MacBook">
+        <h3>MacBook</h3>
+      </div>
+      <div class="card">
+        <img src="images/iPad.jpeg" alt="iPad">
+        <h3>iPad</h3>
+      </div>
+      <div class="card">
+        <img src="images/Airpods.jpeg" alt="AirPods">
+        <h3>AirPods</h3>
+      </div>
+      <div class="card">
+        <img src="images/Apple Watch.webp" alt="Apple Watch">
+        <h3>Watch</h3>
+      </div>
+      <div class="card">
+      <img src="images/Apple TV.jpeg" alt="Apple TV">
+      <h3>Apple TV</h3>
+    </div>
+    <div class="card">
+      <img src="images/HomePod.jpeg" alt="HomePod">
+      <h3>HomePod</h3>
+    </div>
+    <div class="card">
+      <img src="images/Vision Pro.jpg" alt="Vision Pro">
+      <h3>Vision Pro</h3>
+    </div>
+    </div>
+   </section>
+
+  <!-- History Timeline -->
+   <section id="history">
+    <h2>Apple History</h2>
+    <div class="timeline">
+      <div class="event">
+        <h3>1976</h3>
+        <p>Apple was founded by Steve Jobs, Steve Wozniak, and Ronald Wayne.</p>
+      </div>
+      <div class="event">
+        <h3>2007</h3>
+        <p>The first iPhone was introduced, revolutionizing mobile technology.</p>
+      </div>
+      <div class="event">
+        <h3>2015</h3>
+        <p>Apple Watch was released, bringing innovation to wearables.</p>
+      </div>
+      <div class="event">
+        <h3>2025</h3>
+        <p>Apple continues to lead in innovation and sustainable technology.</p>
+      </div>
+    </div>
+   </section>
+  
+  <!-- Awards & Achievements -->
+   <section id="awards">
+  <h2>Awards & Achievements</h2>
+  <div class="awards">
+    <div class="award">
+      <h3>2007</h3>
+      <p>iPhone won Time’s Invention of the Year.</p>
+    </div>
+    <div class="award">
+      <h3>2012</h3>
+      <p>Apple became the most valuable company in history.</p>
+    </div>
+    <div class="award">
+      <h3>2020</h3>
+      <p>Apple reached $2 trillion market value milestone.</p>
+    </div>
+  </div>
+   </section>
+
+  <!-- Our Leaders -->
+   <section id="team">
+  <h2>Our Leaders</h2>
+  <div class="team">
+    <div class="member">
+      <img src="images/Steve Jobs.webp" alt="Steve Jobs">
+      <h3>Steve Jobs</h3>
+      <p>Co-Founder & Visionary</p>
+    </div>
+    <div class="member">
+      <img src="images/Tim Cook.jpg" alt="Tim Cook">
+      <h3>Tim Cook</h3>
+      <p>CEO of Apple</p>
+    </div>
+  </div>
+   </section>
+   
+  <!-- Innovation -->
+   <section id="innovation">
+    <h2>Innovation & Design</h2>
+    <p>
+      Apple products are known for their sleek design, simplicity, 
+      and powerful performance. Every detail is crafted with care 
+      to deliver the best possible user experience.
+    </p>
+    <blockquote>“Innovation distinguishes between a leader and a follower.” – Steve Jobs</blockquote>
+    </section>
+  
+    <section id="sustainability">
+    <h2>Sustainability & Future</h2>
+    <p>
+    Apple is committed to becoming 100% carbon neutral by 2030. 
+    All products and supply chains are being redesigned 
+    to protect the planet for future generations.
+    </p>
+    </section>
+    <!-- Testimonials -->
+<section id="testimonials">
+  <h2>What People Say</h2>
+  <div class="reviews">
+    <div class="review">
+      <p>"The iPhone completely changed my life. Apple design is unmatched!"</p>
+      <h4>- Sarah K.</h4>
+    </div>
+    <div class="review">
+      <p>"As a developer, I admire Apple’s focus on simplicity and performance."</p>
+      <h4>- James P.</h4>
+    </div>
+    <div class="review">
+      <p>"Apple Watch motivates me to stay active every day. Amazing product!"</p>
+      <h4>- Anna L.</h4>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <h4>When was Apple founded?</h4>
+      <p>Apple was founded in 1976 by Steve Jobs, Steve Wozniak, and Ronald Wayne.</p>
+    </div>
+    <div class="faq-item">
+      <h4>What is Apple’s most popular product?</h4>
+      <p>The iPhone is Apple’s most successful and iconic product worldwide.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Does Apple focus on sustainability?</h4>
+      <p>Yes, Apple is working to be 100% carbon neutral by 2030.</p>
+    </div>
+  </div>
+</section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <img src="images/iPhone.png" alt="iPhone">
+      <img src="images/MacBook.jpg" alt="MacBook">
+      <img src="images/iPad.jpeg" alt="iPad">
+      <img src="images/Airpods.jpeg" alt="AirPods">
+      <img src="images/Apple Watch.webp" alt="Watch">
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+
+    <div class="subscribe">
+      <h3>Subscribe to our Newsletter</h3>
+      <input type="email" placeholder="Enter your email">
+      <button>Subscribe</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Apple Project | Made with ❤️ by Student</p>
+  </footer>
+</body>
+</html>
